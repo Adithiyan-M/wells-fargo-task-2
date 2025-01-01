@@ -3,6 +3,7 @@ package com.wellsfargo.counselor.entity;
 import jakarta.persistence.*;
 import java.util.List;
 
+
 @Entity
 public class Client {
     @Id
