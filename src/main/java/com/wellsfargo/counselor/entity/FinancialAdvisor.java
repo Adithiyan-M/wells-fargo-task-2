@@ -7,7 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
 @Entity
-public class Advisor {
+public class FinancialAdvisor {
 
     @Id
     @GeneratedValue()
@@ -28,11 +28,11 @@ public class Advisor {
     @Column(nullable = false)
     private String email;
 
-    protected Advisor() {
+    protected FinancialAdvisor() {
 
     }
 
-    public Advisor(String firstName, String lastName, String address, String phone, String email) {
+    public FinancialAdvisor(String firstName, String lastName, String address, String phone, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
