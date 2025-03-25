@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.annotation.CreatedDate;
 
+import java.util.Date;
+
 @Entity
 public class Portfolio {
 
@@ -13,17 +15,17 @@ public class Portfolio {
 
     @Column(nullable = false)
     @CreatedDate
-    private String create_date;
+    private Date create_date;
 
     @Column(nullable = false)
     @UpdateTimestamp
-    private String update_date;
+    private Date update_date;
 
     protected Portfolio() {
     }
 
     //created constructor for Portfolio
-    public Portfolio(String create_date, String update_date) {
+    public Portfolio(Date create_date, Date update_date) {
         this.create_date = create_date;
         this.update_date = update_date;
     }
@@ -32,18 +34,18 @@ public class Portfolio {
         return portfolioId;
     }
 
-    public String getCreate_date() {
+    public Date getCreate_date() {
         return create_date;
     }
 
-    public void setCreate_date(String create_date) {
+    public void setCreate_date(Date create_date) {
         this.create_date = create_date;
     }
 
-    public String getUpdate_date() {
+    public Date getUpdate_date() {
         return update_date;
     }
-    public void setUpdate_date(String update_date) {
+    public void setUpdate_date(Date update_date) {
         this.update_date = update_date;
     }
 }
