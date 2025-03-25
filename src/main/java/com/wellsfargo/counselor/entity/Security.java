@@ -30,6 +30,15 @@ public class Security {
     protected Security() {
     }
 
+    //created a constructor for Security
+    public Security(String name, String category, double purchasePrice, Date purchaseDate, int quantity) {
+        this.name = name;
+        this.category = category;
+        this.purchasePrice = purchasePrice;
+        this.purchaseDate = purchaseDate;
+        this.quantity = quantity;
+    }
+
     //Getters and Setters for Security
     public long getSecurityId() {
         return securityId;

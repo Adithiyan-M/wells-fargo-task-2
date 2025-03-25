@@ -19,6 +19,14 @@ public class Portfolio {
     @UpdateTimestamp
     private String update_date;
 
+    protected Portfolio() {
+    }
+
+    //created constructor for Portfolio
+    public Portfolio(String create_date, String update_date) {
+        this.create_date = create_date;
+        this.update_date = update_date;
+    }
     //create getter and setters for each field
     public long getId() {
         return portfolioId;

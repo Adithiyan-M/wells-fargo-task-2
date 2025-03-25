@@ -31,7 +31,7 @@ public class Client implements Serializable {
     }
 
 
-    //create getter and setters for each field
+    //made a constructor for Client
     public Client(String firstName, String lastName, String address, String phone, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -40,6 +40,7 @@ public class Client implements Serializable {
         this.email = email;
     }
 
+    //create getter and setters for each field
     public long getClientId() {
         return clientId;
     }
