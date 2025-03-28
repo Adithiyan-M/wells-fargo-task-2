@@ -4,9 +4,12 @@ import jakarta.persistence.*;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.annotation.CreatedDate;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
+@Table(name = "portfolio")
 public class Portfolio {
 
     @Id
@@ -48,4 +51,15 @@ public class Portfolio {
     public void setUpdate_date(Date update_date) {
         this.update_date = update_date;
     }
+
+    //Map Relationship: Many-to-One with Client
+    @ManyToOne
+    private Client client;
+
+    //Relationship: one-to-Many with security
+    @OneToMany(mappedBy = "portfolio", cascade = CascadeType.ALL)
+    @JoinColumn(name = "fk_security_id", referencedColumnName = "security_id")
+    private List<Security> security =  new ArrayList<Security>();
+
+
 }

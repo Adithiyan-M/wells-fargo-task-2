@@ -3,6 +3,7 @@ package com.wellsfargo.counselor.entity;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 public class Client implements Serializable {
@@ -75,5 +76,18 @@ public class Client implements Serializable {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    //Mapping back Relationship: Many-To-One with Advisor
+    @ManyToOne
+    private Advisor advisor;
+
+    public void setAdvisor(Advisor advisor) {
+        this.advisor = advisor;
+    }
+
+    //Create Relationship: One-to-Many with Portfolio
+    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
+    @JoinColumn(name = "fk_profile_id", referencedColumnName = "profile_id")
+    private List<Portfolio> portfolio;
 
 }

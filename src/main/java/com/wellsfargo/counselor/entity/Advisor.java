@@ -3,6 +3,9 @@ package com.wellsfargo.counselor.entity;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 public class Advisor {
 
@@ -80,4 +83,24 @@ public class Advisor {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    //Relationship needed: One-To-many Relationship to Clients
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "fk_client_id", referencedColumnName = "client_id")
+    private List<Client> clients = new ArrayList<>();
+
+    public List<Client> getClients() {
+        return clients;
+    }
+
+    public void addClient(Client client, Advisor advisor) {
+        clients.add(client);
+        client.setAdvisor(this);
+    }
+
+    public void removeClient(Client client) {
+        clients.remove(client);
+        client.setAdvisor(null);
+    }
+
 }

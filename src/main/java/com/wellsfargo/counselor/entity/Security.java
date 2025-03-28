@@ -75,4 +75,7 @@ public class Security {
         this.quantity = quantity;
     }
 
+    //Map Relationship: Many-to-One with Portfolio
+    @ManyToOne
+    private Portfolio portfolio;
 }
