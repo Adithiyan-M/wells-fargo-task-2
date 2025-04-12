@@ -45,7 +45,7 @@ public class Client {
         this.email = email;
     }
 
-    public Long getAdvisorId() {
+    public Long getClientId() {
         return clientId;
     }
 
