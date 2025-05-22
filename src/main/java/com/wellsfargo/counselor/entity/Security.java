@@ -12,6 +12,7 @@ import jakarta.persistence.ManyToOne;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+
 @Entity
 public class Security {
 
