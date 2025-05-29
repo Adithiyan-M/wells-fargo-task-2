@@ -44,11 +44,11 @@ public class Advisor {
         return advisorId;
     }
 
-    public String getFirstName() {
+    public String getirstName() {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
+    public void setfirstName(String firstName) {
         this.firstName = firstName;
     }
 
